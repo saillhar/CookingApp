@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { User } from './user'
+import { UserService } from './user.service'
+import { Component, OnInit, ErrorHandler } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  name:string;
+  users: User[];
+  errorMessage: string;
+  
+  constructor(private userService: UserService) {
+//    userService.getUsers().subscribe(
+//      user => this.name = name,
+//      error => console.error('Error : ' + ErrorHandler)
+//    );
   }
 
+  ngOnInit() {
+    this.userService.getUsers();
+  }
+
+  getHeroes() {
+  this.userService.getUsers()
+                   .subscribe(
+                     users => this.users = users,
+                     error =>  this.errorMessage = <any>error);
+  }
 }
