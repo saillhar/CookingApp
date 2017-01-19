@@ -5,7 +5,8 @@ import { Component, OnInit, ErrorHandler } from '@angular/core';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  providers: [UserService]
 })
 export class UserComponent implements OnInit {
   name:string;
@@ -20,13 +21,14 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUsers();
+    this.getUsers();
   }
 
-  getHeroes() {
+  getUsers() {
   this.userService.getUsers()
                    .subscribe(
                      users => this.users = users,
                      error =>  this.errorMessage = <any>error);
+    console.log(this.users);
   }
 }

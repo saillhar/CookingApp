@@ -1,7 +1,8 @@
 <p>
   user works!
 </p>
-<div *ngFor="let truc of user">
-	{{ user.name }}
+<div *ngFor="let name of users">
+	{{ name }}
 	<hr>
 </div>
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>

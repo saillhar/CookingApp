@@ -36,9 +36,10 @@ export class UserService {
   }
   
   getUsers (): Observable<User[]> {
-    return this.http.get('user/getUsers.php')
-//      .map(response => response.json)
-      .map(this.extractData)
-      .catch(this.handleError);
+    return this.http.get('app/user/getUsers.php')
+      .map(res => res.json())
+//      .map(this.extractData)
+      .catch(this.handleError)
+      ;
   }
 }
