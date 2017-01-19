@@ -10,7 +10,7 @@ import { Component, OnInit, ErrorHandler } from '@angular/core';
 })
 export class UserComponent implements OnInit {
   name:string;
-  users: User[];
+  users: any;
   errorMessage: string;
   
   constructor(private userService: UserService) {

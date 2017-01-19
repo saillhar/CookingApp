@@ -1,10 +1,8 @@
-{
-	"users": [
-		{
-			"name": "thomas"
-		},
-		{
-			"name": "adrien"
-		}
-	]
-}
+[
+	{
+		"name": "thomas"
+	},
+	{
+		"name": "adrien"
+	}
+]
