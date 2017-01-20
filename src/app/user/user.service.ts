@@ -10,12 +10,6 @@ export class UserService {
   
   constructor(private http: Http) { }
   
-  // Exemple pour une lecture d'un fichier json
-//  getPeople() {
-//    return this.http.get('api/people.json')
-//      .map(response => response.json());
-//  }
-  
   private handleError (error: Response | any) {
     // In a real world app, we might use a remote logging infrastructure
     let errMsg: string;
@@ -30,6 +24,12 @@ export class UserService {
     return Observable.throw(errMsg);
   }
   
+  /*
+   * A analyser pour comprendre la non-fonctionnalité 
+   * EXCEPTION: Cannot find a differ supporting object
+   * '[object Object]' of type 'object'. NgFor only supports binding to Iterables such as Arrays.
+   * Surement a mettre en objet User mais le problème persiste
+   */
   private extractData(res: Response) {
     let body = res.json();
     return body.data || { };
@@ -39,7 +39,14 @@ export class UserService {
     return this.http.get('app/user/getUsers.json')
       .map(res => res.json())
 //      .map(this.extractData)
-//      .catch(this.handleError)
+      .catch(this.handleError)
       ;
   }
+  
+//  getUsers (){
+//    return this.http.get('app/user/getUsers.json')
+//      .map(res => res.json())
+//      .catch(this.handleError)
+//      ;
+//  }
 }

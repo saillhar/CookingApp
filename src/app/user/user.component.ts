@@ -13,12 +13,7 @@ export class UserComponent implements OnInit {
   users: any;
   errorMessage: string;
   
-  constructor(private userService: UserService) {
-//    userService.getUsers().subscribe(
-//      user => this.name = name,
-//      error => console.error('Error : ' + ErrorHandler)
-//    );
-  }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
@@ -29,6 +24,5 @@ export class UserComponent implements OnInit {
                    .subscribe(
                      users => this.users = users,
                      error =>  this.errorMessage = <any>error);
-    console.log(this.users);
   }
 }
