@@ -29,3 +29,18 @@ Run `ng github-pages:deploy` to deploy to GitHub Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+You can configure the default HTTP port and the one used by the LiveReload server with two command-line options :
+
+ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153
+
+ng generate component my-new-component
+ng g component my-new-component # using the alias
+
+# components support relative path generation
+# if in the directory src/app/feature/ and you run
+ng g component new-cmp
+# your component will be generated in src/app/feature/new-cmp
+# but if you were to run
+ng g component ../newer-cmp
+# your component will be generated in src/app/newer-cmp

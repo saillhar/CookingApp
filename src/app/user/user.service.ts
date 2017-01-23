@@ -25,10 +25,10 @@ export class UserService {
   }
   
   /*
-   * A analyser pour comprendre la non-fonctionnalité 
+   * A analyser pour comprendre la non-fonctionnalitï¿½ 
    * EXCEPTION: Cannot find a differ supporting object
    * '[object Object]' of type 'object'. NgFor only supports binding to Iterables such as Arrays.
-   * Surement a mettre en objet User mais le problème persiste
+   * Surement a mettre en objet User mais le problï¿½me persiste
    */
   private extractData(res: Response) {
     let body = res.json();
@@ -36,7 +36,7 @@ export class UserService {
   }
   
   getUsers (): Observable<any> {
-    return this.http.get('app/user/getUsers.json')
+    return this.http.get('http://localhost:1337/user')
       .map(res => res.json())
 //      .map(this.extractData)
       .catch(this.handleError)
