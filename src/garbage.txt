@@ -1,0 +1,2 @@
+
+<span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
