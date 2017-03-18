@@ -9,14 +9,14 @@ import { routing } from './app.routes';
 import { UserComponent } from './user/user.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { HomeComponent } from './home/home.component';
-import { RecipeFormComponent } from './recipe/recipeForm.component';
+// import { RecipeFormComponent } from './recipe/recipeForm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     RecipeComponent,
-    RecipeFormComponent,
+    // RecipeFormComponent,
     HomeComponent
   ],
   imports: [
